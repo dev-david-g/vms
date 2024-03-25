@@ -1,0 +1,7 @@
+<div class="container mt-5">
+    @for(vm of virtualMachines; track vm.name) {
+            <div class="p-2">{{vm.name}}</div>
+    } @empty {
+        "List is empty"
+    }
+</div>
