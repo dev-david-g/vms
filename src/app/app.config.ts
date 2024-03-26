@@ -3,9 +3,11 @@ import { provideRouter } from '@angular/router';
 
 import { routes } from './app.routes';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
-import { provideHttpClient, withInterceptors } from '@angular/common/http';
+import { provideHttpClient, withFetch, withInterceptors } from '@angular/common/http';
 import { loggingInterceptor } from './core/logging.interceptor';
 
 export const appConfig: ApplicationConfig = {providers: 
-  [provideRouter(routes), provideAnimationsAsync(), provideHttpClient(withInterceptors([loggingInterceptor]))]
+  [provideRouter(routes), provideAnimationsAsync(), provideHttpClient(
+    withFetch(), // more modern API to make requests than XMLHttpRequest
+    withInterceptors([loggingInterceptor]))]
 };
