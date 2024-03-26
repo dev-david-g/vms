@@ -1,45 +1,53 @@
 <div class="container mt-5">
-    @if(virtualMachines && virtualMachines.length > 0) { 
-        <table mat-table [dataSource]="virtualMachines" class="mat-elevation-z8">
+    @defer(when virtualMachines && virtualMachines.length > 0) {
+        <h3>Virtual machines</h3>
+
+        @if(virtualMachines && virtualMachines.length > 0) {
+        <table mat-table [dataSource]="virtualMachines" class="mat-elevation-z8 mt-3">
 
             <!--- Note that these columns can be defined in any order.
-                  The actual rendered columns are set as a property on the row definition" -->
-          
+                        The actual rendered columns are set as a property on the row definition" -->
+
             <!-- Position Column -->
             <ng-container matColumnDef="name">
-              <th mat-header-cell *matHeaderCellDef> Name </th>
-              <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+                <th mat-header-cell *matHeaderCellDef> Name </th>
+                <td mat-cell *matCellDef="let element"> {{element.name}} </td>
             </ng-container>
-    
+
             <!-- Last activity Column -->
             <ng-container matColumnDef="lastActivity">
-              <th mat-header-cell *matHeaderCellDef> Last activity </th>
-              <td mat-cell *matCellDef="let element"> {{element.lastActivity}} </td>
+                <th mat-header-cell *matHeaderCellDef> Last activity </th>
+                <td mat-cell *matCellDef="let element"> {{element.lastActivity}} </td>
             </ng-container>
-          
+
             <!-- Status Column -->
             <ng-container matColumnDef="status">
                 <th mat-header-cell *matHeaderCellDef> Status </th>
                 <td mat-cell *matCellDef="let element"> {{element.status}} </td>
-             </ng-container>
+            </ng-container>
 
             <!-- Actions Column -->
             <ng-container matColumnDef="actions">
                 <th mat-header-cell *matHeaderCellDef> Actions </th>
-                <td mat-cell  *matCellDef="let element"> 
+                <td mat-cell *matCellDef="let element">
                     <div class="d-inline">
-                        <button mat-flat-button color="primary">More details</button>     
+                        <button mat-flat-button color="primary">More details</button>
                     </div>
                     <div class="d-inline ps-4">
-                        <button mat-flat-button color="warn">Delete</button>      
-                    </div>  
+                        <button mat-flat-button color="warn">Delete</button>
+                    </div>
                 </td>
-             </ng-container>
-    
+            </ng-container>
+
             <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
             <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-          </table>
-    } @else {
+        </table>
+        } @else {
         <span>No virtual machines found</span>
+        }
+    } @placeholder {
+    <div style="width: 100vw; height: 100vw;">
+        <mat-spinner></mat-spinner>
+    </div>
     }
 </div>
