@@ -3,7 +3,9 @@ import { provideRouter } from '@angular/router';
 
 import { routes } from './app.routes';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { provideHttpClient, withInterceptors } from '@angular/common/http';
+import { loggingInterceptor } from './core/logging.interceptor';
 
-export const appConfig: ApplicationConfig = {
-  providers: [provideRouter(routes), provideAnimationsAsync()]
+export const appConfig: ApplicationConfig = {providers: 
+  [provideRouter(routes), provideAnimationsAsync(), provideHttpClient(withInterceptors([loggingInterceptor]))]
 };

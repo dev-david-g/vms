@@ -9,7 +9,7 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 @Component({
   selector: 'app-vms-list',
   standalone: true,
-  imports: [HttpClientModule, MatTableModule, MatButtonModule, MatProgressSpinnerModule],
+  imports: [ MatTableModule, MatButtonModule, MatProgressSpinnerModule],
   templateUrl: './vms-list.component.html',
   styleUrl: './vms-list.component.scss'
 })
