@@ -5,8 +5,14 @@ import { LoginComponent } from './login/login.component';
 import { LogoutComponent } from './logout/logout.component';
 import { authGuard } from './core/guards/auth.guard';
 import { randomGuard } from './core/guards/random.guard';
+import { dataResolver } from './core/resolvers/data.resolver';
 
 export const routes: Routes = [
+    {
+        path: '',
+        redirectTo: 'list',
+        pathMatch: 'full'
+    },
     {
         path: 'login',
         title: 'Virtual machines service - Login',
@@ -23,12 +29,8 @@ export const routes: Routes = [
         title: 'Virtual machines list',
         loadComponent: () => import('./vms-list/vms-list.component').then(() => VmsListComponent),
         canActivate:[authGuard],
-        canMatch: [randomGuard]
-    },
-    {
-        path: '',
-        redirectTo: 'list',
-        pathMatch: 'full'
+        canMatch: [randomGuard],
+        resolve: [dataResolver]
     },
     {
         path: '**',
