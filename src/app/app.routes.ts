@@ -6,6 +6,7 @@ import { LogoutComponent } from './logout/logout.component';
 import { authGuard } from './core/guards/auth.guard';
 import { randomGuard } from './core/guards/random.guard';
 import { dataResolver } from './core/resolvers/data.resolver';
+import { VMS_DETAILS_ROUTES } from './vms-details/vms-details.routes';
 
 export const routes: Routes = [
     {
@@ -31,6 +32,10 @@ export const routes: Routes = [
         canActivate:[authGuard],
         canMatch: [randomGuard],
         resolve: [dataResolver]
+    },
+    {
+        path: 'details/:id',
+        loadChildren: () => import('./vms-details/vms-details.routes').then(() => VMS_DETAILS_ROUTES),
     },
     {
         path: '**',
