@@ -10,12 +10,13 @@ import { ChangeDetectorRef, ChangeDetectionStrategy, Component, Input, OnInit, i
 })
 export class VmsDetailsResourcesComponent implements OnInit  {
   @Input() vmid: number = 0;
+  public usedRam = input.required<number>();
+
   public changeDetectionRef = inject(ChangeDetectorRef)
-  // public id = input.required<number>();
 
   public ngOnInit(): void {
-    setInterval(() => {
-        this.changeDetectionRef.markForCheck();  
-    }, 1000)
+    //setInterval(() => {
+     //   this.changeDetectionRef.markForCheck();  
+    // }, 3000);
   }
 }
