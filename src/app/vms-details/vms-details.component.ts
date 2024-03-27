@@ -10,7 +10,7 @@ import { ActivatedRoute, ActivatedRouteSnapshot, RouterOutlet, provideRouter } f
   styleUrl: './vms-details.component.scss'
 })
 export class VmsDetailsComponent implements OnInit {
-  public vmId: number = 0; 
+  public id: number = 0; 
   
    public ngOnInit(): void {
   }
