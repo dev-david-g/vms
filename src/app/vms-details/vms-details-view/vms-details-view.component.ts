@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, OnInit, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit, effect, signal } from '@angular/core';
 import { VmsDetailsResourcesComponent } from '../vms-details-resources/vms-details-resources.component';
 
 @Component({
@@ -10,15 +10,22 @@ import { VmsDetailsResourcesComponent } from '../vms-details-resources/vms-detai
   styleUrl: './vms-details-view.component.scss',
 })
 export class VmsDetailsViewComponent implements OnInit {
-  public id = 10;
   public usedRamSignal = signal(1024);
-  public readonly ramSizes = [512, 1024, 2048, 8000];
+  private readonly ramSizes = [512, 1024, 2048, 8000];
+  private usedRam = 1024;
+
+  constructor() {
+
+    effect(()=> {
+      console.log('primitive: ' + this.usedRam + ' and signal: ' + this.usedRamSignal());
+    });
+  }
 
   public ngOnInit(): void {
     setInterval(() => {
-      this.id = this.id + 10;
-      this.usedRamSignal.set(this.ramSizes[Math.floor(Math.random() * 4)]);
-      console.log('used RAM: ' + this.usedRamSignal() + ' and id: ' + this.id);
+     this.usedRam = this.ramSizes[Math.floor(Math.random() * 4)];
+    // this.usedRamSignal.set(this.usedRam);
+     console.log('primitive: ' + this.usedRam);
     }, 1000)
   }
 }
