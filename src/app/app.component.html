@@ -1,6 +1,10 @@
 <div>
-  <mat-toolbar color="primary">
-    <span>VM manager</span>
+  <mat-toolbar color="primary" class="flex justify-content-between">
+    <button mat-button [routerLink]="''">VM manager</button>
+    <button mat-button [routerLink]="'list'" class="flex align-items-center">
+      <span>List</span>
+      <mat-icon class="example-icon" aria-hidden="false" aria-label="Example heart icon">list</mat-icon>
+    </button>
   </mat-toolbar>
   <router-outlet></router-outlet>
 </div>

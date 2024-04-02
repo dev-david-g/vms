@@ -7,11 +7,13 @@ import { authGuard } from './core/guards/auth.guard';
 import { randomGuard } from './core/guards/random.guard';
 import { dataResolver } from './core/resolvers/data.resolver';
 import { VMS_DETAILS_ROUTES } from './vms-details/vms-details.routes';
+import { VmsDashboardComponent } from './vms-dashboard/vms-dashboard.component';
 
 export const routes: Routes = [
     {
         path: '',
-        redirectTo: 'list',
+        title: 'Dashboard',
+        loadComponent: () => import('./vms-dashboard/vms-dashboard.component').then(() => VmsDashboardComponent),
         pathMatch: 'full'
     },
     {
