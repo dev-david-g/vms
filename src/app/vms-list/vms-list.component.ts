@@ -8,11 +8,12 @@ import { MatTableModule } from '@angular/material/table';
 import { ContainerComponent } from '../core/container.component';
 import { AlertDialogComponent } from '../shared/alert-dialog/alert-dialog.component';
 import { Vms } from '../shared/models/vms';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-vms-list',
   standalone: true,
-  imports: [MatTableModule, MatButtonModule, MatProgressSpinnerModule],
+  imports: [MatTableModule, MatButtonModule, MatProgressSpinnerModule, RouterLink],
   templateUrl: './vms-list.component.html',
   styleUrl: './vms-list.component.scss',
 })
