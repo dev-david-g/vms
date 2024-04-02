@@ -1,0 +1,106 @@
+{
+	"info": {
+		"_postman_id": "542e124a-7632-4f65-99ec-9b1467546126",
+		"name": "VMS Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "2127482"
+	},
+	"item": [
+		{
+			"name": "GetVirtualMachines",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/virtual-machines",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"virtual-machines"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CreateVirtualMachine",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": \"6\",\r\n    \"name\": \"Virtual machine 6\",\r\n    \"status\": \"DISCONNECTED\",\r\n    \"RAM\": \"16GB\",\r\n    \"Storage\": \"256GB\",\r\n    \"CPU\": \"Intel® Xeon® Platinum 8444H, 45M Cache, 2.90GHz\",\r\n    \"network\": \"192.168.1.5\",\r\n    \"lastActivity\": \"2024/03/01\"\r\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/virtual-machines",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"virtual-machines"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UpdateVirtualMachine",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": \"2\",\r\n    \"name\": \"Virtual machine 2.2\",\r\n    \"status\": \"DISCONNECTED\",\r\n    \"RAM\": \"8GB\",\r\n    \"Storage\": \"64GB\",\r\n    \"CPU\": \"Intel® Xeon® Platinum 8444H, 45M Cache, 2.90GHz\",\r\n    \"network\": \"192.168.1.2\",\r\n    \"lastActivity\": \"2024/03/15\"\r\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/virtual-machines/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"virtual-machines",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteVirtualMachine",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/virtual-machines/6",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"virtual-machines",
+						"6"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
