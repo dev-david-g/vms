@@ -5,11 +5,12 @@ import { ContainerComponent } from '../core/container.component';
 import {MatTableModule} from '@angular/material/table';
 import {MatButtonModule} from '@angular/material/button';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-vms-list',
   standalone: true,
-  imports: [ MatTableModule, MatButtonModule, MatProgressSpinnerModule],
+  imports: [ MatTableModule, MatButtonModule, MatProgressSpinnerModule, RouterLink],
   templateUrl: './vms-list.component.html',
   styleUrl: './vms-list.component.scss'
 })
