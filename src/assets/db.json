@@ -52,11 +52,41 @@
         }
     ],
     "logs": [
-        {
-            "id": 1,
-            "vmId": 1,
-            "type": "INFO",
-            "description": "Some event"
-        }
+      {
+        "id": 1,
+        "vmId": 1,
+        "type": "INFO",
+        "description": "Some event"
+      },
+      {
+        "id": 2,
+        "vmId": 1,
+        "type": "ERROR",
+        "description": "Some event"
+      },
+      {
+        "id": 3,
+        "vmId": 2,
+        "type": "INFO",
+        "description": "Some event"
+      },
+      {
+        "id": 4,
+        "vmId": 3,
+        "type": "INFO",
+        "description": "Some event"
+      },
+      {
+        "id": 5,
+        "vmId": 4,
+        "type": "ERROR",
+        "description": "Some event"
+      },
+      {
+        "id": 6,
+        "vmId": 5,
+        "type": "INFO",
+        "description": "Some event"
+      }
     ]
 }
