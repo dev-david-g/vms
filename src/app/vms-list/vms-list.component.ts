@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit, inject } from '@angular/core';
+import { Component, OnInit, inject, signal } from '@angular/core';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialog } from '@angular/material/dialog';
@@ -20,7 +20,7 @@ import { RouterLink } from '@angular/router';
 export class VmsListComponent extends ContainerComponent implements OnInit {
   private readonly httpClient = inject(HttpClient);
   private readonly dialog = inject(MatDialog);
-  public virtualMachines: any[] = [];
+  public virtualMachines = signal([]);
   public displayedColumns: string[] = [
     'name',
     'lastActivity',
@@ -33,13 +33,11 @@ export class VmsListComponent extends ContainerComponent implements OnInit {
   }
 
   getVirtualMachines() {
-    this.httpClient
-      .get('/api/virtual-machines')
+    this.httpClient.get('/api/virtual-machines')
       .pipe(takeUntilDestroyed(this.destroyRef))
       .subscribe({
         next: (response: any) => {
-          this.virtualMachines = response;
-          console.log(this.virtualMachines);
+          this.virtualMachines.set(response);
         },
         error: (error) => {},
       });
