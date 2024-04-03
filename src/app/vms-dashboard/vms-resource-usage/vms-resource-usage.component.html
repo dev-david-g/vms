@@ -1,0 +1,14 @@
+<div class="container">
+    <div class="my-4">
+        <label>CPU</label>
+        <mat-progress-bar mode="determinate" [value]="usedCPUPercentage" color="warn"></mat-progress-bar><span> {{usedCPU}} / {{maxCPU}} GHz</span>
+    </div>
+    <div class="my-4">
+        <label>RAM</label>
+        <mat-progress-bar mode="determinate" [value]="usedRAMPercentage" color="primary"></mat-progress-bar><span> {{usedRAM}} / {{maxRAM}} MB</span>
+    </div>
+    <div class="my-4">
+        <label>Storage</label>
+        <mat-progress-bar mode="determinate" [value]="usedStoragePercentage" color="accent"></mat-progress-bar><span> {{usedStorage}} /{{maxStorage}} GB</span>
+    </div>
+</div>
