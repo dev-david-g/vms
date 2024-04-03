@@ -10,7 +10,6 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
   styleUrl: './vms-resource-usage.component.scss'
 })
 export class VmsResourceUsageComponent {
-  public virtualMachine = input<any>(0);
   public maxCPU = 3.40;
   public maxRAM = 2048;
   public maxStorage = 128;
@@ -27,7 +26,9 @@ export class VmsResourceUsageComponent {
 
     this.calculateValues();
 
-    setInterval(() => { this.calculateValues(); this.changeDetectionRef.markForCheck(); }, 1000);
+    setInterval(() => { this.calculateValues(); 
+     // this.changeDetectionRef.markForCheck(); 
+    }, 1000);
   }
 
   private calculateValues(): void {
