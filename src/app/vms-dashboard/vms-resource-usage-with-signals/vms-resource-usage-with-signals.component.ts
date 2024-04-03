@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, computed, input, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, computed, effect, input, signal } from '@angular/core';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 
 @Component({
@@ -22,6 +22,12 @@ export class VmsResourceUsageWithSignalsComponent {
   public usedRAMPercentageComputed = computed(() => 100 / this.maxRAM * this.usedRAMSignal());
   public usedStorageSignal = signal<number>(0);
   public usedStoragePercentageComputed = computed(() =>  100 / this.maxStorage * this.usedStorageSignal());
+
+  private loggingEffect = effect(() => {
+    console.log(`${Date.now().toString()}: ${this.usedCPUSignal()}/${this.maxCPU} GHz of CPU,` + 
+    `${this.usedRAMSignal()}/${this.maxRAM} MB of RAM,` + 
+    `${this.usedStorageSignal()}/${this.maxStorage} GB`);
+  });
 
   public ngOnInit(): void {
     this.calculateValues();
