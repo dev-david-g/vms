@@ -1,9 +1,10 @@
 export interface Vms {
   id: number;
   name: string;
-  ram: string;
-  storage: string;
-  cpu: string;
+  status: string;
+  RAM: string;
+  Storage: string;
+  CPU: string;
   network: string;
   lastActivity: string;
 }

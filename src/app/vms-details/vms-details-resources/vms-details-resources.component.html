@@ -1,5 +1,20 @@
+@if (vm()) {
 <div class="container mt-4">
-    {{vmid}}
-    <br/>
-    <span> used ram memory {{usedRam()}} GB</span>
+  <div class="card mb-3" style="width: 18rem">
+    <div class="card-body">
+      <h5 class="card-title">{{ vm().name }}</h5>
+      <p class="card-text">CPU: {{ vm().CPU }}</p>
+      <p class="card-text">Ram: {{ vm().RAM }}</p>
+      <p *ngIf="vm().status !== 'DISCONNECTED'" class="card-text red-text">
+        Used Ram: {{ usedRam() }} GB
+      </p>
+      <p class="card-text">Storage: {{ vm().Storage }}</p>
+      <p class="card-text">ID: {{ vm().id }}</p>
+      <p class="card-text">Last activity: {{ vm().lastActivity }}</p>
+      <p class="card-text">Network: {{ vm().network }}</p>
+      <p class="card-text">Status: {{ vm().status }}</p>
+    </div>
+  </div>
 </div>
+
+}
