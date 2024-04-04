@@ -23,11 +23,17 @@ export class VmsResourceUsageWithSignalsComponent {
   public usedStorageSignal = signal<number>(0);
   public usedStoragePercentageComputed = computed(() =>  100 / this.maxStorage * this.usedStorageSignal());
 
-  private loggingEffect = effect(() => {
-    console.log(`${Date.now().toString()}: ${this.usedCPUSignal()}/${this.maxCPU} GHz of CPU,` + 
-    `${this.usedRAMSignal()}/${this.maxRAM} MB of RAM,` + 
-    `${this.usedStorageSignal()}/${this.maxStorage} GB`);
-  });
+  /**
+   *
+   */
+  constructor() {
+    effect(() => {
+      console.log(`${Date.now().toString()}: ${this.usedCPUSignal()}/${this.maxCPU} GHz of CPU,` + 
+      `${this.usedRAMSignal()}/${this.maxRAM} MB of RAM,` + 
+      `${this.usedStorageSignal()}/${this.maxStorage} GB`);
+    });
+    
+  }
 
   public ngOnInit(): void {
     this.calculateValues();
