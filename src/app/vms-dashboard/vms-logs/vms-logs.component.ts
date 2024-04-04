@@ -2,11 +2,12 @@ import { CommonModule } from '@angular/common';
 import { Component, computed, inject } from '@angular/core';
 import { ContainerComponent } from '../../core/container.component';
 import { LogsService } from '../../shared/logs-service/logs.service';
+import {MatCardModule} from '@angular/material/card';
 
 @Component({
   selector: 'app-vms-logs',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, MatCardModule],
   templateUrl: './vms-logs.component.html',
   styleUrl: './vms-logs.component.scss',
 })

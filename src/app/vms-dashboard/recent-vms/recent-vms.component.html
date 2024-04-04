@@ -1,5 +1,4 @@
 <div class="container mt-5">
-  @defer(when virtualMachines() && virtualMachines().length > 0) {
   <h4>Recent virtual machines</h4>
 
   @if(virtualMachines() && virtualMachines().length > 0) {
@@ -22,10 +21,5 @@
   </table>
   } @else {
   <span>No virtual machines found</span>
-  }
-  } @placeholder {
-  <div style="width: 100vw; height: 100vw;">
-    <mat-spinner></mat-spinner>
-  </div>
   }
 </div>
