@@ -2,7 +2,7 @@
     <h1 class="h3">Dashboard</h1>
     <div class="grid">
         <div class="row">
-            <div class="col-9" >
+            <div class="col-9">
                 <app-recent-vms></app-recent-vms>
             </div>
             <div class="col-3">
@@ -10,36 +10,33 @@
                 <app-vms-logs></app-vms-logs>
                 }
                 @placeholder {
-                    <mat-progress-spinner></mat-progress-spinner>
+                <mat-progress-spinner></mat-progress-spinner>
                 }
             </div>
         </div>
         <div class="row my-5">
             <div class="col-12">
-                <mat-slide-toggle (change)="signalBasedToggleChange($event)" >Signal based component</mat-slide-toggle>
+                <mat-slide-toggle (change)="signalBasedToggleChange($event)">Signal based component</mat-slide-toggle>
             </div>
         </div>
-        <div class="row">
-            <div class="col-12">
-            @defer(when isSignalComponentVisible() === false) {
-                <h4 class="my-5">VM resource allocation</h4>
-                <app-vms-resource-usage></app-vms-resource-usage>
-            } 
-            @placeholder {
-                <mat-progress-spinner></mat-progress-spinner>
+        @defer() {
+            @if(isSignalComponentVisible() === false) {
+            <div class="row">
+                <div class="col-12">
+                    <h4 class="my-5">VM resource allocation</h4>
+                    <app-vms-resource-usage></app-vms-resource-usage>
+                </div>
+            </div>
+            } @else {
+            <div class="row">
+                <div class="col-12">
+                    <h4 class="my-5">VM resource allocation with signal</h4>
+                    <app-vms-resource-usage-with-signals></app-vms-resource-usage-with-signals>
+                </div>
+            </div>
             }
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-12">
-                @defer(when isSignalComponentVisible()) {
-                <h4 class="my-5">VM resource allocation with signal</h4>
-                <app-vms-resource-usage-with-signals></app-vms-resource-usage-with-signals>
-                }
-                @placeholder {
-                    <mat-progress-spinner></mat-progress-spinner>
-                }
-            </div>
-        </div>
+        } @loading {
+        <mat-progress-spinner></mat-progress-spinner>
+        } 
     </div>
 </div>
