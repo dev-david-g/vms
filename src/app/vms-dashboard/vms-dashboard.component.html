@@ -2,17 +2,17 @@
     <h1 class="h3">Dashboard</h1>
     <div class="grid">
         <div class="row">
-            <div class="col-9" style="border:1px solid red;">
+            <div class="col-9" >
                 <app-recent-vms></app-recent-vms>
             </div>
-            <div class="col-3" style="border:1px solid red;">
+            <div class="col-3">
                 @defer() {
                 <app-vms-logs></app-vms-logs>
                 }
             </div>
         </div>
         <div class="row">
-            <div class="col-12" style="border:1px solid red;">
+            <div class="col-12">
                 <h4 class="my-2">VM resource allocation</h4>
                 @defer() {
                 <app-vms-resource-usage></app-vms-resource-usage>
@@ -22,7 +22,7 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-12" style="border:1px solid red;">
+            <div class="col-12">
                 <h4 class="my-2">VM resource allocation with signal</h4>
                 @defer() {
                 <app-vms-resource-usage-with-signals></app-vms-resource-usage-with-signals>

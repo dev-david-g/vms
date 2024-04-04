@@ -32,11 +32,11 @@ export class RecentVmsComponent extends ContainerComponent implements OnInit {
       .subscribe({
         next: (response: any) => {
           // this.virtualMachines = response.sort((a: any, b: any) => a.lastActivity > b.lastActivity ? -1 : 1);
-          this.virtualMachines.update((vms: any) => vms = response.sort((a: any, b: any) => a.lastActivity > b.lastActivity ? -1 : 1));
+          this.virtualMachines.update((vms: any) => vms = response.sort((a: any, b: any) => a.lastActivity > b.lastActivity ? -1 : 1).slice(0, 3)
+          );
           console.log(this.virtualMachines);
         },
         error: (error) => { },
       });
   }
-
 }
