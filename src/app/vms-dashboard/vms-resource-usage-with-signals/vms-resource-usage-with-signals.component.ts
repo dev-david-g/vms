@@ -1,11 +1,12 @@
 import { ChangeDetectionStrategy, Component, computed, effect, input, signal } from '@angular/core';
+import { MatCardModule } from '@angular/material/card';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 
 @Component({
   selector: 'app-vms-resource-usage-with-signals',
   standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [MatProgressBarModule],
+  imports: [MatProgressBarModule, MatCardModule],
   templateUrl: './vms-resource-usage-with-signals.component.html',
   styleUrl: './vms-resource-usage-with-signals.component.scss'
 })

@@ -1,14 +1,18 @@
-<div class="container">
-    <div class="my-4">
-        <label>CPU</label>
-        <mat-progress-bar mode="determinate" [value]="usedCPUPercentageComputed()" color="warn"></mat-progress-bar><span> {{usedCPUSignal()}} / {{maxCPU}} GHz</span>
-    </div>
-    <div class="my-4">
-        <label>RAM</label>
-        <mat-progress-bar mode="determinate" [value]="usedRAMPercentageComputed()" color="primary"></mat-progress-bar><span> {{usedRAMSignal()}} / {{maxRAM}} MB</span>
-    </div>
-    <div class="my-4">
-        <label>Storage</label>
-        <mat-progress-bar mode="determinate" [value]="usedStoragePercentageComputed()" color="accent"></mat-progress-bar><span> {{usedStorageSignal()}} /{{maxStorage}} GB</span>
-    </div>
+<div class="mt-3">
+    <mat-card>
+        <mat-card-content>
+            <div class="my-4">
+                <label>CPU</label>
+                <mat-progress-bar mode="determinate" [value]="usedCPUPercentageComputed()" color="warn"></mat-progress-bar><span> {{usedCPUSignal()}} / {{maxCPU}} GHz</span>
+            </div>
+            <div class="my-4">
+                <label>RAM</label>
+                <mat-progress-bar mode="determinate" [value]="usedRAMPercentageComputed()" color="primary"></mat-progress-bar><span> {{usedRAMSignal()}} / {{maxRAM}} MB</span>
+            </div>
+            <div class="my-4">
+                <label>Storage</label>
+                <mat-progress-bar mode="determinate" [value]="usedStoragePercentageComputed()" color="accent"></mat-progress-bar><span> {{usedStorageSignal()}} /{{maxStorage}} GB</span>
+            </div>
+        </mat-card-content>
+    </mat-card>
 </div>

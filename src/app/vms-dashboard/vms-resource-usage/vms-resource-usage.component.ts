@@ -1,10 +1,11 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit, inject, input } from '@angular/core';
+import { MatCardModule } from '@angular/material/card';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 
 @Component({
   selector: 'app-vms-resource-usage',
   standalone: true,
-  imports: [MatProgressBarModule],
+  imports: [MatProgressBarModule, MatCardModule],
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './vms-resource-usage.component.html',
   styleUrl: './vms-resource-usage.component.scss'
