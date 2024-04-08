@@ -3,10 +3,10 @@
   <mat-card class="mt-3 h-full">
     <mat-card-content>
       @for ( log of logs(); track log) {
-             <!--Use switch to change text color for WARN, INFO, SUCCESS, ERROR messages-->
+        
         <div>{{log.type }}: {{ log.description }}</div>
       } @empty {
-        No logs found.
+        <span>No logs found.</span>
       }
     </mat-card-content>
   </mat-card>
