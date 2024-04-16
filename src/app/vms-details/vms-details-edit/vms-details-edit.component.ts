@@ -29,10 +29,10 @@ export class VmsDetailsEditComponent {
       });
       dialogRef.afterClosed().subscribe((response: any) => {
         if (response === 'yes') { // Assuming 'yes' is the value returned when the user clicks "Yes"
-            this.hasUnsavedChanges = false; // Set to true after the user confirms
+            this.hasUnsavedChanges = false; // Set to false after the user confirms
             this.router.navigate(['/']);
         } else {
-            this.hasUnsavedChanges = true; // Set to false if the user cancels
+            this.hasUnsavedChanges = true; // Set to true if the user cancels
         }
     });
     }
