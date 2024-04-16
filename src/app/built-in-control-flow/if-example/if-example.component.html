@@ -1,0 +1,51 @@
+@if (country === 'Bulgaria') {
+<div class="card w-50 m-auto">
+  <div class="card-body text-center">
+    <h4 class="card-title">Switch between countries</h4>
+    <p class="card-text">{{ country }}</p>
+    <p class="card-text">{{ descBulgaria }}</p>
+  </div>
+</div>
+} @else if (country === 'Romania') {
+<div class="card w-50 m-auto">
+  <div class="card-body text-center">
+    <h4 class="card-title">Switch between countries</h4>
+    <p class="card-text">{{ country }}</p>
+    <p class="card-text">{{ descRomania }}</p>
+  </div>
+</div>
+} @else {
+<div class="card w-50 m-auto">
+  <div class="card-body text-center">
+    <h4 class="card-title">Switch between countries</h4>
+    <p class="card-text">{{ country }}</p>
+    <p class="card-text">{{ descItaly }}</p>
+  </div>
+</div>
+}
+
+<div class="d-flex justify-content-center">
+  <div class="btn-group" role="group" aria-label="Country selection">
+    <button
+      type="button"
+      class="btn btn-primary m-2"
+      (click)="setCountry('Bulgaria')"
+    >
+      Bulgaria
+    </button>
+    <button
+      type="button"
+      class="btn btn-secondary m-2"
+      (click)="setCountry('Romania')"
+    >
+      Romania
+    </button>
+    <button
+      type="button"
+      class="btn btn-success m-2"
+      (click)="setCountry('Italy')"
+    >
+      Italy
+    </button>
+  </div>
+</div>

@@ -1,10 +1,39 @@
 <div>
   <mat-toolbar color="primary" class="flex justify-content-between">
     <button mat-button [routerLink]="''">{{appName()}}</button>
+    <div style="display: flex; justify-content: flex-end">
+      <button [routerLink]="'if-example'" mat-button class="flex align-items-center">
+        <span>If-Example</span>
+        <mat-icon
+          class="example-icon"
+          aria-hidden="false"
+          aria-label="Example logout icon"
+          >login</mat-icon
+        >
+      </button>
+      <button [routerLink]="'for-example'" mat-button class="flex align-items-center">
+        <span>For-Example</span>
+        <mat-icon
+          class="example-icon"
+          aria-hidden="false"
+          aria-label="Example logout icon"
+          >login</mat-icon
+        >
+      </button>
+      <button [routerLink]="'switch-example'" mat-button class="flex align-items-center">
+        <span>Switch-Example</span>
+        <mat-icon
+          class="example-icon"
+          aria-hidden="false"
+          aria-label="Example logout icon"
+          >login</mat-icon
+        >
+      </button>
     <button mat-button [routerLink]="'list'" class="flex align-items-center">
       <span>List</span>
       <mat-icon class="example-icon" aria-hidden="false" aria-label="Example heart icon">list</mat-icon>
     </button>
+  </div>
   </mat-toolbar>
   <router-outlet></router-outlet>
 </div>
