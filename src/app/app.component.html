@@ -1,10 +1,75 @@
 <div>
   <mat-toolbar color="primary" class="flex justify-content-between">
-    <button mat-button [routerLink]="''">{{appName()}}</button>
-    <button mat-button [routerLink]="'list'" class="flex align-items-center">
-      <span>List</span>
-      <mat-icon class="example-icon" aria-hidden="false" aria-label="Example heart icon">list</mat-icon>
+    <button mat-button [routerLink]="''">{{ appName() }}</button>
+
+    <div style="display: flex; justify-content: flex-end">
+      <button [routerLink]="'login'" mat-button class="flex align-items-center">
+        <span>Login</span>
+        <mat-icon
+          class="example-icon"
+          aria-hidden="false"
+          aria-label="Example logout icon"
+          >login</mat-icon
+        >
+      </button>
+      <button
+      mat-button
+      [routerLink]="'subscription-list'"
+      class="flex align-items-center"
+    >
+      <span>can-load-guard</span>
+      <mat-icon
+        class="example-icon"
+        aria-hidden="false"
+        aria-label="Example heart icon"
+        >view</mat-icon
+      >
     </button>
+      <button
+        mat-button
+        [routerLink]="'vms-details-edit'"
+        class="flex align-items-center"
+      >
+        <span>Edit-Vm</span>
+        <mat-icon
+          class="example-icon"
+          aria-hidden="false"
+          aria-label="Example heart icon"
+          >edit</mat-icon
+        >
+      </button>
+      <button mat-button [routerLink]="'list'" class="flex align-items-center">
+        <span>List</span>
+        <mat-icon
+          class="example-icon"
+          aria-hidden="false"
+          aria-label="Example heart icon"
+          >list</mat-icon
+        >
+      </button>
+      <button
+        [routerLink]="'admin-view'"
+        mat-button
+        class="flex align-items-center"
+      >
+        <span>Admin</span>
+        <mat-icon
+          class="example-icon"
+          aria-hidden="false"
+          aria-label="Example logout icon"
+          >person</mat-icon
+        >
+      </button>
+      <button (click)="logout()" mat-button class="flex align-items-center">
+        <span>Logout</span>
+        <mat-icon
+          class="example-icon"
+          aria-hidden="false"
+          aria-label="Example logout icon"
+          >exit_to_app</mat-icon
+        >
+      </button>
+    </div>
   </mat-toolbar>
   <router-outlet></router-outlet>
 </div>

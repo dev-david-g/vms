@@ -1,7 +1,8 @@
-import { CanMatchFn } from '@angular/router';
+import { inject } from '@angular/core';
+import { CanMatchFn, Router } from '@angular/router';
 
 export const randomGuard: CanMatchFn = (route, state) => {
-  const randomNumber = Math.floor(Math.random() * 99) + 1;
-  console.log('Random number: ' + randomNumber)
-  return 50 > randomNumber || true;
+  const router = inject(Router);
+  const token = localStorage.getItem('currentUser');
+  return token ? true : router.navigateByUrl('/login');
 };
