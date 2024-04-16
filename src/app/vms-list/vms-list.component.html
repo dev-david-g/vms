@@ -32,7 +32,7 @@
                     <button mat-flat-button color="primary" [routerLink]="'/details/'+element.id">More details</button>
                 </div>
                 <div class="d-inline ps-4">
-                    <button mat-flat-button color="warn" (click)="openAlertDialog(element)">Delete</button>
+                    <button [disabled]="isDeleteButtonDisabled" mat-flat-button color="warn" (click)="openAlertDialog(element)">Delete</button>
                 </div>
             </td>
         </ng-container>

@@ -1,92 +1,96 @@
 {
-    "virtual-machines": [
-        {
-            "id": 1,
-            "name": "Virtual machine 1",
-            "status": "RUNNING",
-            "RAM": "32GB",
-            "Storage": "128GB",
-            "CPU": "Intel® Xeon® Platinum 8444H, 45M Cache, 2.90GHz",
-            "network": "192.168.1.1",
-            "lastActivity": "2024/03/20"
-        },
-        {
-            "id": 2,
-            "name": "Virtual machine 2",
-            "status": "DISCONNECTED",
-            "RAM": "8GB",
-            "Storage": "64GB",
-            "CPU": "Intel® Xeon® Platinum 8444H, 45M Cache, 2.90GHz",
-            "network": "192.168.1.2",
-            "lastActivity": "2024/03/15"
-        },
-        {
-            "id": 3, 
-            "name": "Virtual machine 3",
-            "status": "RUNNING",
-            "RAM": "16GB",
-            "Storage": "256GB",
-            "CPU": "Intel® Xeon® Platinum 8444H, 45M Cache, 2.90GHz",
-            "network": "192.168.1.3",
-            "lastActivity": "2024/03/23"
-        },
-        {
-            "id": 4,
-            "name": "Virtual machine 4",
-            "status": "DISCONNECTED",
-            "RAM": "32GB",
-            "Storage": "256GB",
-            "CPU": "Intel® Xeon® Platinum 8444H, 45M Cache, 2.90GHz",
-            "network": "192.168.1.4",
-            "lastActivity": "2023/12/09"
-        },
-        {
-            "id": 5,
-            "name": "Virtual machine 5",
-            "status": "RUNNING",
-            "RAM": "16GB",
-            "Storage": "256GB",
-            "CPU": "Intel® Xeon® Platinum 8444H, 45M Cache, 2.90GHz",
-            "network": "192.168.1.5",
-            "lastActivity": "2024/03/01"
-        }
-    ],
-    "logs": [
-      {
-        "id": 1,
-        "vmId": 1,
-        "type": "INFO",
-        "description": "Some event"
-      },
-      {
-        "id": 2,
-        "vmId": 1,
-        "type": "ERROR",
-        "description": "Some event"
-      },
-      {
-        "id": 3,
-        "vmId": 2,
-        "type": "INFO",
-        "description": "Some event"
-      },
-      {
-        "id": 4,
-        "vmId": 3,
-        "type": "INFO",
-        "description": "Some event"
-      },
-      {
-        "id": 5,
-        "vmId": 4,
-        "type": "ERROR",
-        "description": "Some event"
-      },
-      {
-        "id": 6,
-        "vmId": 5,
-        "type": "INFO",
-        "description": "Some event"
-      }
-    ]
+  "virtual-machines": [
+    {
+      "id": "1",
+      "name": "Virtual machine 1",
+      "status": "RUNNING",
+      "RAM": "32GB",
+      "Storage": "128GB",
+      "CPU": "Intel® Xeon® Platinum 8444H, 45M Cache, 2.90GHz",
+      "network": "192.168.1.1",
+      "lastActivity": "2024/03/20"
+    },
+    {
+      "id": "2",
+      "name": "Virtual machine 2",
+      "status": "DISCONNECTED",
+      "RAM": "8GB",
+      "Storage": "64GB",
+      "CPU": "Intel® Xeon® Platinum 8444H, 45M Cache, 2.90GHz",
+      "network": "192.168.1.2",
+      "lastActivity": "2024/03/15"
+    },
+    {
+      "id": "3",
+      "name": "Virtual machine 3",
+      "status": "RUNNING",
+      "RAM": "16GB",
+      "Storage": "256GB",
+      "CPU": "Intel® Xeon® Platinum 8444H, 45M Cache, 2.90GHz",
+      "network": "192.168.1.3",
+      "lastActivity": "2024/03/23"
+    },
+    {
+      "id": "5",
+      "name": "Virtual machine 5",
+      "status": "RUNNING",
+      "RAM": "16GB",
+      "Storage": "256GB",
+      "CPU": "Intel® Xeon® Platinum 8444H, 45M Cache, 2.90GHz",
+      "network": "192.168.1.5",
+      "lastActivity": "2024/03/01"
+    }
+  ],
+  "logs": [
+    {
+      "id": "1",
+      "vmId": 1,
+      "type": "INFO",
+      "description": "Some event"
+    },
+    {
+      "id": "2",
+      "vmId": 1,
+      "type": "ERROR",
+      "description": "Some event"
+    },
+    {
+      "id": "3",
+      "vmId": 2,
+      "type": "INFO",
+      "description": "Some event"
+    },
+    {
+      "id": "4",
+      "vmId": 3,
+      "type": "INFO",
+      "description": "Some event"
+    },
+    {
+      "id": "5",
+      "vmId": 4,
+      "type": "ERROR",
+      "description": "Some event"
+    },
+    {
+      "id": "6",
+      "vmId": 5,
+      "type": "INFO",
+      "description": "Some event"
+    }
+  ],
+  "users": [
+    {
+      "id": "1",
+      "username": "admin",
+      "password": "admin",
+      "role": "admin"
+    },
+    {
+      "id": "2",
+      "username": "manager",
+      "password": "manager",
+      "role": "manager"
+    }
+  ]
 }

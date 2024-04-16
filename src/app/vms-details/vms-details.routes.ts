@@ -1,12 +1,15 @@
 import { Routes } from '@angular/router';
-import { VmsDetailsComponent } from './vms-details.component';
-import { VmsDetailsViewComponent } from './vms-details-view/vms-details-view.component';
 import { VmsDetailsEditComponent } from './vms-details-edit/vms-details-edit.component';
+import { VmsDetailsViewComponent } from './vms-details-view/vms-details-view.component';
+import { VmsDetailsComponent } from './vms-details.component';
+import { childRouteGuard } from '../core/guards/child-route.guard';
 
 export const VMS_DETAILS_ROUTES: Routes = [
     {
         path: '',
         component: VmsDetailsComponent,
+        canActivateChild: [childRouteGuard],
+        data: {roles: ['admin']},
         children: [
             {
                 path: '',

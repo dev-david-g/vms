@@ -22,7 +22,14 @@ export class AlertDialogComponent implements OnInit {
 
   ngOnInit(): void {}
 
+  onDenie() {
+    this.dialogRef.close('no');
+  }
   onClose(result?: any) {
-    this.dialogRef.close(result);
+    if (result) {
+      this.dialogRef.close(result);
+    } else {
+      this.dialogRef.close('yes');
+    }
   }
 }
