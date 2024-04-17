@@ -12,6 +12,9 @@ import { VmsDashboardComponent } from './vms-dashboard/vms-dashboard.component';
 import { VmsDetailsEditComponent } from './vms-details/vms-details-edit/vms-details-edit.component';
 import { VMS_DETAILS_ROUTES } from './vms-details/vms-details.routes';
 import { VmsListComponent } from './vms-list/vms-list.component';
+import { ForExampleComponent } from './built-in-control-flow/for-example/for-example.component';
+import { IfExampleComponent } from './built-in-control-flow/if-example/if-example.component';
+import { SwitchExampleComponent } from './built-in-control-flow/switch-example/switch-example.component';
 
 export const routes: Routes = [
   {
@@ -46,7 +49,21 @@ export const routes: Routes = [
     data: { roles: ['manager', 'admin'] },
     resolve: [dataResolver],
   },
-
+  {
+    path: 'switch-example',
+    title: 'Switch-Example',
+    component: SwitchExampleComponent,
+  },
+  {
+    path: 'if-example',
+    title: 'If-Example',
+    component: IfExampleComponent,
+  },
+  {
+    path: 'for-example',
+    title: 'For-Example',
+    component: ForExampleComponent,
+  },
   {
     path: 'profile',
     title: 'Admin Profile',
