@@ -2,15 +2,16 @@ import { Routes } from '@angular/router';
 import { AccessDeniedComponent } from './access-denied/access-denied.component';
 import { AdminViewComponent } from './admin-view/admin-view.component';
 import { authGuard } from './core/guards/auth.guard';
-import { randomGuard } from './core/guards/random.guard';
+import { roleManager } from './core/guards/role-manager.guard';
 import { dataResolver } from './core/resolvers/data.resolver';
 import { LoginComponent } from './login/login.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { AdminProfileComponent } from './profile/admin-profile/admin-profile.component';
+import { ManagerProfileComponent } from './profile/manager-profile/manager-profile.component';
 import { VmsDashboardComponent } from './vms-dashboard/vms-dashboard.component';
 import { VmsDetailsEditComponent } from './vms-details/vms-details-edit/vms-details-edit.component';
 import { VMS_DETAILS_ROUTES } from './vms-details/vms-details.routes';
 import { VmsListComponent } from './vms-list/vms-list.component';
-import { SubscriptionListComponent } from './can-load/subscription-list/subscription-list.component';
 
 export const routes: Routes = [
   {
@@ -43,8 +44,25 @@ export const routes: Routes = [
       import('./vms-list/vms-list.component').then(() => VmsListComponent),
     canActivate: [authGuard],
     data: { roles: ['manager', 'admin'] },
-    // canMatch: [randomGuard],
     resolve: [dataResolver],
+  },
+
+  {
+    path: 'profile',
+    title: 'Admin Profile',
+    loadComponent: () =>
+      import('./profile/admin-profile/admin-profile.component').then(
+        () => AdminProfileComponent
+      ),
+    canMatch: [roleManager],
+  },
+  {
+    path: 'profile',
+    title: 'Manager Profile',
+    loadComponent: () =>
+      import('./profile/manager-profile/manager-profile.component').then(
+        () => ManagerProfileComponent
+      ),
   },
 
   {
@@ -54,22 +72,9 @@ export const routes: Routes = [
       import('./vms-details/vms-details-edit/vms-details-edit.component').then(
         () => VmsDetailsEditComponent
       ),
-    // canActivate: [authGuard],
-    canMatch: [randomGuard],
     canDeactivate: [
       (component: VmsDetailsEditComponent) => !component.hasUnsavedChanges,
     ],
-    // data: {roles: ['admin']}
-  },
-  {
-    path: 'subscription-list',
-    title: 'Subscription-List View',
-    loadComponent: () =>
-      import('./can-load/subscription-list/subscription-list.component').then(
-        () => SubscriptionListComponent
-      ),
-    canMatch: [authGuard],
-    data: {roles: ['admin', 'manager']}
   },
   {
     path: 'details/:id',
