@@ -8,21 +8,21 @@ import { Component } from '@angular/core';
   styleUrl: './for-example.component.scss',
 })
 export class ForExampleComponent {
-  items: string[] = [];
+  virtualMachines: string[] = [];
 
   generateItems() {
-    this.items = [
-      'Bulgaria',
-      'Romania',
-      'Italy',
-      'Finland',
-      'Austria',
-      'Norway',
-      'Germany',
+    this.virtualMachines = [
+      'Virtual machine 1',
+      'Virtual machine 2',
+      'Virtual machine 3',
+      'Virtual machine 4',
+      'Virtual machine 5',
+      'Virtual machine 6',
+      'Virtual machine 7',
     ];
   }
 
   removeItems() {
-    this.items = [];
+    this.virtualMachines = [];
   }
 }

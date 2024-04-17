@@ -1,51 +1,51 @@
-@if (country === 'Bulgaria') {
+@if (virtualMachine === 'VmOne') {
     <div class="card w-50 m-auto">
       <div class="card-body text-center">
-        <h4 class="card-title">Switch between countries</h4>
-        <p class="card-text">{{ country }}</p>
-        <p class="card-text">{{ descBulgaria }}</p>
+        <h4 class="card-title">Switch between virtual machines</h4>
+        <p class="card-text">{{ virtualMachine }}</p>
+        <p class="card-text">{{ descVmOne }}</p>
       </div>
     </div>
-    } @else if (country === 'Romania') {
+    } @else if (virtualMachine === 'VmTwo') {
     <div class="card w-50 m-auto">
       <div class="card-body text-center">
-        <h4 class="card-title">Switch between countries</h4>
-        <p class="card-text">{{ country }}</p>
-        <p class="card-text">{{ descRomania }}</p>
+        <h4 class="card-title">Switch between virtual machines</h4>
+        <p class="card-text">{{ virtualMachine }}</p>
+        <p class="card-text">{{ descVmTwo }}</p>
       </div>
     </div>
     } @else {
     <div class="card w-50 m-auto">
       <div class="card-body text-center">
-        <h4 class="card-title">Switch between countries</h4>
-        <p class="card-text">{{ country }}</p>
-        <p class="card-text">{{ descItaly }}</p>
+        <h4 class="card-title">Switch between virtual machines</h4>
+        <p class="card-text">{{ virtualMachine }}</p>
+        <p class="card-text">{{ descVmThree }}</p>
       </div>
     </div>
     }
     
     <div class="d-flex justify-content-center">
-      <div class="btn-group" role="group" aria-label="Country selection">
+      <div class="btn-group" role="group" aria-label="virtualMachine selection">
         <button
           type="button"
           class="btn btn-primary m-2"
-          (click)="setCountry('Bulgaria')"
+          (click)="setVirtualMachine('VmOne')"
         >
-          Bulgaria
+          VmOne
         </button>
         <button
           type="button"
           class="btn btn-secondary m-2"
-          (click)="setCountry('Romania')"
+          (click)="setVirtualMachine('VmTwo')"
         >
-          Romania
+          VmTwo
         </button>
         <button
           type="button"
           class="btn btn-success m-2"
-          (click)="setCountry('Italy')"
+          (click)="setVirtualMachine('VmThree')"
         >
-          Italy
+          VmThree
         </button>
       </div>
     </div>
