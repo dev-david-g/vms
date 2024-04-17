@@ -1,0 +1,51 @@
+@if (virtualMachine === 'VmOne') {
+    <div class="card w-50 m-auto">
+      <div class="card-body text-center">
+        <h4 class="card-title">Switch between virtual machines</h4>
+        <p class="card-text">{{ virtualMachine }}</p>
+        <p class="card-text">{{ descVmOne }}</p>
+      </div>
+    </div>
+    } @else if (virtualMachine === 'VmTwo') {
+    <div class="card w-50 m-auto">
+      <div class="card-body text-center">
+        <h4 class="card-title">Switch between virtual machines</h4>
+        <p class="card-text">{{ virtualMachine }}</p>
+        <p class="card-text">{{ descVmTwo }}</p>
+      </div>
+    </div>
+    } @else {
+    <div class="card w-50 m-auto">
+      <div class="card-body text-center">
+        <h4 class="card-title">Switch between virtual machines</h4>
+        <p class="card-text">{{ virtualMachine }}</p>
+        <p class="card-text">{{ descVmThree }}</p>
+      </div>
+    </div>
+    }
+    
+    <div class="d-flex justify-content-center">
+      <div class="btn-group" role="group" aria-label="virtualMachine selection">
+        <button
+          type="button"
+          class="btn btn-primary m-2"
+          (click)="setVirtualMachine('VmOne')"
+        >
+          VmOne
+        </button>
+        <button
+          type="button"
+          class="btn btn-secondary m-2"
+          (click)="setVirtualMachine('VmTwo')"
+        >
+          VmTwo
+        </button>
+        <button
+          type="button"
+          class="btn btn-success m-2"
+          (click)="setVirtualMachine('VmThree')"
+        >
+          VmThree
+        </button>
+      </div>
+    </div>
